@@ -1,0 +1,13 @@
+.animate-eqBar {
+  animation: eqBar 0.55s ease-in-out infinite;
+}
+
+@keyframes eqBar { 
+  0%, 100% { transform: scaleY(0.3); } 
+  50% { transform: scaleY(1); } 
+}
+
+@keyframes spinSpider { 
+  from { transform: rotate(0deg); } 
+  to { transform: rotate(360deg); } 
+}

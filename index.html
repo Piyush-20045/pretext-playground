@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Pretext Playground</title>
+</head>
+
+<body class="m-0 overflow-hidden bg-[#0a0a0a] text-[#e8e4dc] font-[Georgia,'Times_New_Roman',serif]">
+  <div id="app" class="relative w-screen h-screen overflow-hidden" style="cursor: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2732%27 height=%2732%27 viewBox=%270 0 32 32%27%3E%3Cg stroke=%27white%27 stroke-width=%271.2%27 fill=%27none%27 stroke-linecap=%27round%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%273%27/%3E%3Cpath d=%27M16 2v8M16 22v8M2 16h8M22 16h8M6 6l6 6M20 20l6 6M26 6l-6 6M6 26l6-6%27/%3E%3C/g%3E%3C/svg%3E') 16 16, auto;">
+    
+    <div id="stage" class="absolute inset-0">
+      
+      <!-- Rendering Layers -->
+      <div id="lines-layer" class="absolute inset-0"></div>
+      <div id="orbs-layer" class="absolute inset-0"></div>
+      
+      <!-- Static Header elements -->
+      <div id="header" class="absolute left-4 md:left-16 top-4 md:top-7 z-10 p-2 md:p-0 pointer-events-none">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-[0.1em] md:tracking-[0.18em] text-[#efe5cc] leading-none">SUNFLOWER</h1>
+        <div class="mt-2 md:mt-3 text-xs md:text-sm tracking-wide text-[#b9b0a0]">By Miles Morales · December 14, 2018</div>
+      </div>
+
+      <!-- Effects Layers -->
+      <div id="trail-layer" class="absolute inset-0 pointer-events-none z-[12]"></div>
+      <div id="web-layer" class="absolute inset-0 pointer-events-none z-[15]"></div>
+
+      <!-- Interactive Controls -->
+      <div id="controls" class="absolute right-4 md:right-6 top-6 md:top-4 z-30 flex gap-2">
+        <button id="music-btn" class="flex items-center gap-2 cursor-pointer bg-[#141414bf] text-[#efe5cc] border border-[#e8e4dc40] rounded-lg px-2.5 py-2 font-[ui-monospace,monospace] text-xs">
+          <span>Play Music</span>
+          <span id="equalizer" class="hidden h-3 w-3.5 items-end gap-0.5">
+            <span class="inline-block w-[3px] h-3 bg-[#e8e4dc] animate-eqBar"></span>
+            <span class="inline-block w-[3px] h-3 bg-[#e8e4dc] animate-eqBar" style="animation-delay: .08s"></span>
+            <span class="inline-block w-[3px] h-3 bg-[#e8e4dc] animate-eqBar" style="animation-delay: .14s"></span>
+          </span>
+        </button>
+        <button id="add-orb-btn" class="cursor-pointer bg-[#141414bf] text-[#efe5cc] border border-[#e8e4dc40] rounded-lg px-2.5 py-2 font-[ui-monospace,monospace] text-xs">
+          Add Orb
+        </button>
+      </div>
+
+      <!-- Stats Tooltip -->
+      <div id="stats" class="hidden md:block absolute right-6 top-14 z-20 pointer-events-none text-[#d6c7aa] bg-[#0a0a0a8c] border border-[#e8e4dc2e] rounded-lg px-3 py-2.5 backdrop-blur-md font-[ui-monospace,SFMono-Regular,Menlo,monospace] text-xs">
+        Loading...
+      </div>
+      
+    </div>
+  </div>
+  
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
